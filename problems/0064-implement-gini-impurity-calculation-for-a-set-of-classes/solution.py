@@ -9,12 +9,11 @@ def gini_impurity(y):
     :return: Gini Impurity rounded to three decimal places
     """
     labels = set(y)
-    p = []
     total = 0
+    
     for l in labels:
         pi = np.sum(np.array(y) == l) / len(y)
         total+=pi**2
-        p.append(pi)
     
     val = 1 - total
     return round(val,3)
