@@ -5,6 +5,6 @@ def single_neuron_model(features: list[list[float]], labels: list[int], weights:
     # Your code here
     preds = bias + np.array(features) @ np.array(weights)
     probabilities = 1 / (1+np.exp(-preds))
-    mse = np.mean(((np.array(labels) - probabilities)**2))
+    mse = np.mean((labels-probabilities)**2)
 
     return probabilities, mse
